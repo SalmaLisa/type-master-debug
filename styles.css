@@ -12,7 +12,7 @@ body {
 }
 
 .box-container {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -48,6 +48,16 @@ body {
   border-radius: 15px;
 }
 
+/* flashing text cursor implement */
+#display:after {
+  content: '';
+  width: 2.5px;
+  height: 25px;
+  background: white;
+  opacity: 0;
+  display: inline-block;
+  animation: blink .6s linear infinite alternate;
+}
 #countdown {
   position: fixed;
   height: 100vh;
@@ -145,7 +155,6 @@ button {
 #histories {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
 }
 
 .card {
@@ -155,7 +164,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px;
   color: white;
   font-weight: normal;
   border-radius: 15px;
@@ -190,6 +199,15 @@ button {
  margin-top: 10px;
 }
 
+/* flashing text cursor implement */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media only screen and (max-width: 700px) {
   .box-container {
     padding: 0 20px;
@@ -211,8 +229,8 @@ button {
 @media only screen and (min-width: 701px) and (max-width: 1400px) {
   
   .card {
-    width: 31%;
-    margin: 11px;
+    width: 31.5%;
+    margin: 8px;
     flex-direction: column;
     align-items: flex-start;
   }
