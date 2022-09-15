@@ -54,6 +54,10 @@ const typeController = (e) => {
     gameOver();
   }
 };
+// prevent scrolling after pressing spacebar
+window.onkeydown = function(e) { 
+  return !(e.keyCode == 32);
+};
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
@@ -70,6 +74,11 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = Math.round((finishTime - startTime) / 1000);
 
+  // type speed
+  const timeTakenInMinuites = timeTaken / 60;
+  const numberOfWords = userText.length / 5;
+  const grossWPM = Math.round(numberOfWords / timeTakenInMinuites);
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -82,11 +91,12 @@ const gameOver = () => {
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>Your typing speed: <span class="bold">${grossWPM}</span> WPM</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
-    <button onclick="closeModal()">Close</button>
+    <button class="close-btn" onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, grossWPM, errorCount);
 
   // restart everything
   startTime = null;
