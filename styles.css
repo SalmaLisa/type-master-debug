@@ -49,7 +49,7 @@ body {
 }
 
 /* flashing text cursor implement */
-#display:after {
+#display::after {
   content: '';
   width: 2.5px;
   height: 25px;

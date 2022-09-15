@@ -20,13 +20,28 @@
     </header>
     <main class="container">
       <h4>1. Describe the differences between local storage and session storage.</h4>
-      <p class="ms-4 text">Answer : <br></p>
+      <p class="ms-4 text">Answer : <br>
+      Local storage and session storage are similar but not same. The major difference between them is their data storage expirity. The data saved in local storage has to be deleted manually but the data saved in session storage gets deleted automatically after closing the browser tab. When a new tab is opened a unique session page gets started.
+      </p>
       <h4>2. Describe the differences between global scope between block scope.</h4>
-      <p class="ms-4 text">Answer : <br></p>
+      <p class="ms-4 text">Answer : <br>
+      Scope in javaScript refers to the current context of code, which determines the accessibility of variables. The variables declared in global scope can be accessed from anywhere within the programme. These variables are usually declared at the top of the code. Local variables are declared within block scope like functions. They are available only inside the block.
+      </p>
       <h4>3. How does event loop work in javaScript ?</h4>
-      <p class="ms-4 text">Answer : <br></p>
-      <h4>4. Why do we get undefined in JavaScript ?</h4>
-      <p class="ms-4 text">Answer : <br></p>
+      <p class="ms-4 text">Answer : <br>
+        The event loop is a mechanism that allows JavaScript to perform non-blocking operations. When an asynchronous task is started, the event loop will start running. Once the task is completed, the event loop will again check for any other tasks that need to be performed. In short, the Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the Event Loop will take the first event from the queue and will push it to the Call Stack, which effectively runs it.
+      </p>
+      <h4>4. Through how many ways do we get undefined in javascript ?</h4>
+      <p class="ms-4 mb-5 text">Answer : <br>
+      1 ) variable that is not initialized will give undefined.<br>
+      2 ) function with no return will give undefined.<br>
+      3 ) function perameter that is not passed will give undefined.<br>
+      4 ) if return is not defined what to return in a function, it will return undefined.<br>
+      5 ) accessing property that doesn't exists in the object will give undefined.<br>
+      6 ) accessing array elements out of index range will give undefined.<br>
+      7 ) an element of an array after deleting  using 'delete' will give undefined.<br>
+      8 ) setting a value directly to undefined.
+      </p>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
