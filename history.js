@@ -30,7 +30,7 @@ function displayHistory() {
     newRow.classList.add("card");
 
     newRow.innerHTML = `
-  <h3>${test.questionText}</h3>
+  <p class="text">${test.questionText}</p>
   <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
   <p>Your typing speed: <span class="bold">${test.typingSpeed}</span> WPM</p>
   <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
@@ -39,3 +39,8 @@ function displayHistory() {
     histories.appendChild(newRow);
   });
 }
+//clear history
+document.getElementById('clear-btn').addEventListener('click', function () {
+  localStorage.clear()
+  histories.innerHTML = "";
+})
